@@ -30,3 +30,15 @@ console.log('Listening on port:' + proxy_port);
 app.get('/hello.txt', function(req, res) {
   return res.send('Hello World');
 });
+
+app.get('/user/:id', function(req, res) {
+  return res.send("Hello User:" + req.params.id);
+});
+
+app.get('/listing/:id', function(req, res) {
+  return res.send("Hello Listing:" + req.params.id);
+});
+
+app.get('/search/:location', function(req, res) {
+  return res.send('Searching in:' + req.params.location);
+});

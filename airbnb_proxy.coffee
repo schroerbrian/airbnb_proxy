@@ -33,3 +33,21 @@ console.log 'Listening on port:' + proxy_port
 
 app.get '/hello.txt', (req, res) ->
   res.send 'Hello World'
+
+app.get '/user/:id', (req, res) ->
+	res.send "Hello User:" + req.params.id
+
+app.get '/listing/:id', (req, res) ->	
+	res.send "Hello Listing:" + req.params.id 
+
+app.get '/search/:location', (req, res) ->
+	res.send 'Searching in:' + req.params.location
+
+# Location search with dates
+#https://www.airbnb.com/s/los-angeles?checkin=08%2F21%2F2013&amp;checkout=08%2F24%2F2013&guests=2
+
+# listing page
+#https://www.airbnb.com/rooms/101052
+
+# profile page
+#https://www.airbnb.com/users/show/530020
